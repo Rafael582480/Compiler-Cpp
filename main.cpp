@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "./include/lexer/lexer.hpp"
+#include "./include/parser/parser.hpp"
 
 int main()
 {
@@ -12,8 +13,9 @@ int main()
   {
     Lexer lexer(line);
     Lexer::TOKENS token = lexer.getTokens();
-  }
 
+    Parser parser(token);
+  }
 
   Arquivo.close();
 

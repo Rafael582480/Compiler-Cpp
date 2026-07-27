@@ -58,6 +58,29 @@ void Lexer::TransformTokens(std::string line)
     }
   }
 
-  Lexer::tokens.IDENTIFICADOR = indentificador;
-  Lexer::tokens.VALOR = value;
+  pass = false;
+  std::string num = "";
+
+  for (char c : value)
+  {
+    if (c == '+' || c == 'x' || c == '/' || c == '-')
+    {
+      Lexer::tokens.EXPRESSION.push_back(std::string(1, c));
+      pass = true;
+      num = "";
+      continue;
+    }
+
+    num += c;
+
+    if (pass)
+    {
+      Lexer::tokens.EXPRESSION.push_back(num);
+    }
+
+    else
+    {
+      Lexer::tokens.EXPRESSION.push_back(num);
+    }
+  }
 }

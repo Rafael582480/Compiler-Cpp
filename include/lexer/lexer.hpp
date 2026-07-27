@@ -7,10 +7,12 @@ class Lexer
 {
 
 public:
+
+
   struct TOKENS
   {
     std::string IDENTIFICADOR;
-    std::string VALOR;
+    std::vector<std::string> EXPRESSION;
   };
 
   TOKENS tokens;
