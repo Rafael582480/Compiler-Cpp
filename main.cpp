@@ -15,6 +15,10 @@ int main()
     Lexer::TOKENS token = lexer.getTokens();
 
     Parser parser(token);
+    std::vector<std::string> expression = parser.getExpression();
+
+    token.EXPRESSION = expression;
+
   }
 
   Arquivo.close();
