@@ -7,12 +7,34 @@ class Lexer
 {
 
 public:
+  enum class TokenType
+  {
+    Number,
+    Identifier,
 
+    Plus,
+    Minus,
+    Multiply,
+    Divide,
+
+    LeftParen,
+    RightParen,
+    Semicolon,
+
+    Print,
+
+    EndOfFile
+  };
+
+  struct Tokens
+  {
+    TokenType type;
+    std::string lexeme;
+  };
 
   struct TOKENS
   {
-    std::string IDENTIFICADOR;
-    std::vector<std::string> EXPRESSION;
+    std::vector<Tokens> EXPRESSION;
   };
 
   TOKENS tokens;

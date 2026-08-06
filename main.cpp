@@ -9,16 +9,12 @@ int main()
   std::string line;
   std::ifstream Arquivo("./test/txt");
 
-  while (getline (Arquivo, line))
+  while (getline(Arquivo, line))
   {
     Lexer lexer(line);
     Lexer::TOKENS token = lexer.getTokens();
 
-    Parser parser(token);
-    std::vector<std::string> expression = parser.getExpression();
-
-    token.EXPRESSION = expression;
-
+    ParserPrimary ParserPrimary(token);
   }
 
   Arquivo.close();
